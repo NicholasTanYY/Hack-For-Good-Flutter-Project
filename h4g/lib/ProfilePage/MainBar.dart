@@ -25,7 +25,7 @@ class MainBar extends StatelessWidget {
                 decoration: const BoxDecoration(
                     color: Colors.lightBlueAccent,
                     borderRadius: BorderRadius.all(Radius.circular(20))),
-                child: const Text("Below"))),
+                child: const Text("Innovation ideas"))),
       ],
     );
   }
