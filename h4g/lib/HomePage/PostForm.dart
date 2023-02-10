@@ -1,8 +1,22 @@
 import 'package:flutter/material.dart';
 import './Post.dart';
 
-class PostForm extends StatelessWidget {
+class PostForm extends StatefulWidget {
   const PostForm({super.key});
+  @override
+  State<PostForm> createState() => _PostItems();
+}
+
+class _PostItems extends State<PostForm> {
+  // String ideaStr = '';
+  // String detailStr = '';
+
+  void displayPost(generalIdea, detail) {
+    setState(() {
+      String ideaStr = generalIdea;
+      String detailStr = detail;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +65,9 @@ class PostForm extends StatelessWidget {
         FloatingActionButton.extended(
             backgroundColor: const Color(0xff03dac6),
             foregroundColor: Colors.black,
-            onPressed: () {},
+            onPressed: () {
+              displayPost(ideaInput.text, detailsInput.text);
+            },
             icon: const Icon(Icons.add),
             label: const Text('Post'))
       ]),
