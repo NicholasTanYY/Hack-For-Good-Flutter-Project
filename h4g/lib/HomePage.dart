@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:h4g/Button.dart';
+import 'package:h4g/ProfilePage.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -22,8 +23,8 @@ class HomePage extends StatelessWidget {
         floatingActionButton: const Button(),
         body: const TabBarView(
           children: [
-            Icon(Icons.car_rental_outlined),
             Icon(Icons.directions_transit),
+            ProfilePage(),
             Icon(Icons.directions_bike),
           ],
         ),
