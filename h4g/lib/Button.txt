@@ -1,0 +1,63 @@
+Button.txt
+
+import 'package:flutter/material.dart';
+import 'dart:developer'; //(auto import will do this even)
+
+class Button extends StatefulWidget {
+  const Button({super.key});
+
+  @override
+  State<Button> createState() => _PostState();
+}
+
+class dynamicWidget extends StatelessWidget {
+  TextEditingController int = TextEditingController();
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+//      margin: new EdgeInsets.all(8.0),
+        child: ListBody(
+      children: <Widget>[
+        Row(children: <Widget>[
+          Container(width: 400, padding: EdgeInsets.fromLTRB(5, 5, 5, 0)),
+          Container(width: 100, padding: EdgeInsets.fromLTRB(5, 5, 5, 0)),
+        ])
+      ],
+    ));
+  }
+}
+
+class _PostState extends State<Button> {
+  int numPosts = 0;
+  List<dynamicWidget> dynamicList = [];
+  List<int> postNum = [];
+  void _togglePostNums() {
+    setState(() {
+      numPosts++;
+    });
+    log("numPosts: $numPosts");
+    if (dynamicList.length >= 10) {
+      return;
+    }
+    dynamicList.add(dynamicWidget());
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    Widget dynamicTextField = Flexible(
+      flex: 2,
+      child: ListView.builder(
+        itemCount: dynamicList.length,
+        itemBuilder: (_, index) => dynamicList[index],
+      ),
+    );
+
+    return FloatingActionButton.extended(
+        backgroundColor: const Color(0xff03dac6),
+        foregroundColor: Colors.black,
+        onPressed: _togglePostNums,
+        icon: const Icon(Icons.add),
+        label: const Text('Create Post'));
+  }
+}
