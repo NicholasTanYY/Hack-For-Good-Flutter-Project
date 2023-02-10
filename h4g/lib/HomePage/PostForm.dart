@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import './Post.dart';
 
 class PostForm extends StatelessWidget {
   const PostForm({super.key});
 
   @override
   Widget build(BuildContext context) {
-    TextEditingController ideaInput = TextEditingController();
-    TextEditingController detailsInput = TextEditingController();
+    final TextEditingController ideaInput = TextEditingController();
+    final TextEditingController detailsInput = TextEditingController();
     return Dialog(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
       elevation: 16,
@@ -47,6 +48,12 @@ class PostForm extends StatelessWidget {
                     borderSide: BorderSide(width: 3, color: Colors.black)))),
 
         // SizedBox(height: 20),
+        FloatingActionButton.extended(
+            backgroundColor: const Color(0xff03dac6),
+            foregroundColor: Colors.black,
+            onPressed: () {},
+            icon: const Icon(Icons.add),
+            label: const Text('Post'))
       ]),
     );
   }

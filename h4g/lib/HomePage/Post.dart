@@ -9,6 +9,13 @@ class Post extends StatefulWidget {
 
 class _PostState extends State<Post> {
   int numPosts = 0;
+  void createPost(generalIdea, detail) {
+    setState(() {
+      Text generalIdeas = generalIdea;
+      Text details = detail;
+    });
+  }
+
   void _togglePostNums() {
     setState(() {
       numPosts++;
