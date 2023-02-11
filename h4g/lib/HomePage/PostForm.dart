@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './Post.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class PostForm extends StatefulWidget {
   const PostForm({super.key});
@@ -8,9 +9,6 @@ class PostForm extends StatefulWidget {
 }
 
 class _PostItems extends State<PostForm> {
-  // String ideaStr = '';
-  // String detailStr = '';
-
   void displayPost(generalIdea, detail) {
     setState(() {
       String ideaStr = generalIdea;
